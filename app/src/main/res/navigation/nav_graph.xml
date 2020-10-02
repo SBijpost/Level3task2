@@ -12,11 +12,11 @@
         tools:layout="@layout/fragment_portals" >
         <action
             android:id="@+id/action_remindersFragment_to_addReminderFragment"
-            app:destination="@id/addReminderFragment" />
+            app:destination="@id/addPortalFragment" />
     </fragment>
     <fragment
-        android:id="@+id/addReminderFragment"
-        android:name="com.sem.level3task2.AddReminderFragment"
+        android:id="@+id/addPortalFragment"
+        android:name="com.sem.level3task2.AddPortalFragment"
         android:label="fragment_add_reminder"
         tools:layout="@layout/fragment_add_portal" />
 </navigation>

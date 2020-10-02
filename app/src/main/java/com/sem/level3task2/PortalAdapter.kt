@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_portal.view.*
 
 
-class PortalAdapter(private val reminders: List<Portal>) : RecyclerView.Adapter<PortalAdapter.ViewHolder>(){
+class PortalAdapter(private val portals: List<Portal>) : RecyclerView.Adapter<PortalAdapter.ViewHolder>(){
 
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,14 +31,14 @@ class PortalAdapter(private val reminders: List<Portal>) : RecyclerView.Adapter<
      * Returns the size of the list
      */
     override fun getItemCount(): Int {
-        return reminders.size
+        return portals.size
     }
 
     /**
      * Called by RecyclerView to display the data at the specified position.
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.databind(reminders[position])
+        holder.databind(portals[position])
     }
 
 

@@ -12,7 +12,8 @@ import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_add_portal.*
 
 const val REQ_PORTAL_KEY = "req_portal"
-const val BUNDLE_PORTAL_KEY = "bundle_portal"
+const val BUNDLE_PORTAL_TITLE_KEY = "bundle_portal_title"
+const val BUNDLE_PORTAL_URL_KEY = "bundle_portal_url"
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -40,7 +41,7 @@ class AddPortalFragment : Fragment() {
         val portalUrl = etUrl.text.toString()
 
         if (portalTitle.isNotBlank() && portalUrl.isNotBlank()) {
-            setFragmentResult(REQ_PORTAL_KEY, bundleOf(Pair(portalTitle, portalUrl)))
+            setFragmentResult(REQ_PORTAL_KEY, bundleOf(Pair(BUNDLE_PORTAL_TITLE_KEY, Portal(portalTitle, portalUrl))))
 
             findNavController().popBackStack()
         } else {

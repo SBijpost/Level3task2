@@ -41,9 +41,9 @@ class PortalsFragment : Fragment() {
     }
 
     private fun observeAddReminderResult() {
-        setFragmentResultListener(REQ_REMINDER_KEY) { key, bundle ->
-            bundle.getString(BUNDLE_REMINDER_KEY)?.let {
-                val portal = Portal (it, url)
+        setFragmentResultListener(REQ_PORTAL_KEY) { key, bundle ->
+            bundle.getParcelable<Portal>(BUNDLE_PORTAL_TITLE_KEY)?.let {
+                val portal = it
 
                 portals.add(portal)
                 portalAdapter.notifyDataSetChanged()
